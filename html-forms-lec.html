@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <form action="https://request-inspector.glitch.me/" method="post">
+            <label for="query">Search Term:</label>
+            <input id="query" name="query" type="text" value="Persona">
+            <label for="cheese">Favorite Cheese:</label>
+            <input id="cheese" name="cheese" type="text" placeholder="What cheese do you like?" value="Colby Jack">
+            <label for="pw">Password for the Wifi: </label>
+            <input id="pw" name="password" type="password">
+            <br>
+            <label for="blog-post">How is life?</label>
+            <br>
+            <textarea name="blog-post" id="blog-post" cols="30" rows="10">Life is Fantastic!</textarea>
+            <img src="img/cats.jpg" alt="a cute kitty" width="800" height="600">
+
+            <br>
+            <input id="newsletter" name="newsletter"type="checkbox" value="add-to-list" checked>
+            <label  for="newsletter">Would you like to subscribe?</label>
+            <h4>Favorite Color?</h4>
+            <input name="quiz" id="quiz-a" type="radio" value="red"><label for="quiz-a">Red</label>
+
+            <br>
+            <label for="dropdown">Select your favorite Playstation: </label>
+            <br>
+            <select name="dropdown" id="dropdown">
+
+                <option value="ps1">Playstation 1</option>
+                <option value="ps2">Playstation 2</option>
+                <option value="ps3">Playstation 3</option>
+                <option value="ps4">Playstation 4</option>
+            </select>
+<!--        <input type="submit">-->
+            <input type="hidden" name="user-id" value="620774">
+        <button type="submit">Submit for Website</button>
+        </form>
+    </body>
 </html>
