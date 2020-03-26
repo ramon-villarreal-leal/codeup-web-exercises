@@ -5,42 +5,53 @@
     <title>Register with Us</title>
 </head>
 <body>
-<form method="POST" action="https://request-inspector.glitch.me/">
-    <label for="email">Email:</label>
-    <input id="email" name="email" type="text" placeholder="Enter Email">
-    <br>
-    <label for="password">Password:</label>
-    <input id="password" name="password" type="password" placeholder="Enter Password">
-    <br>
-    <button type="submit">Enter your credentials.</button>
-    <br>
+<header>
+    <h1>Veridian Dynamics</h1>
+</header>
+<main>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <section>
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="text" placeholder="Enter Email">
+            <br>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" placeholder="Enter Password">
+            <br>
+            <button type="submit">Enter your credentials.</button>
+        </section>
 
-    <h3><label for="bio">Tell me about yourself!</label></h3>
-    <textarea name="bio" id="bio" cols="30" rows="10"
-              placeholder="Fill out a short description of yourself!" required></textarea>
-    <button id="bio" name="bio" type="submit">Submit</button>
-
-    <br>
-    <h3>How did you hear about us?</h3>
-
-    <input id="billboard" name="billboard" type="checkbox" value="Bill"><label for="billboard">Billboard</label>
-    <input id="radioad" name="radioad" type="checkbox" value="Radio Ad"><label for="radioad">Radio Advertisement</label>
-    <input id="internet" name="internet" type="checkbox" value="Internet"><label for="internet">Internet</label>
-    <input id="other" name="other" type="checkbox" value="Other"><label for="other">Other</label>
-    <br>
-    <button type="submit">Submit your Answer</button>
-    <br>
-
-    <label for="dropdown"><h3>What Internet Browser are you Using?</h3></label>
-    <select name="dropdown" id="dropdown">
-        <option value="Chrome">Google Chrome</option>
-        <option value="Firefox">Mozilla Firefox</option>
-        <option value="Internet Explorer">Internet Explorer</option>
-        <option value="Opera">Opera</option>
-        <option value="Safari">Safari</option>
+        <section>
+            <h3><label for="bio">Tell me about yourself!</label></h3>
+            <textarea name="bio" id="bio" cols="30" rows="10"
+                      placeholder="Tell me your Biography!" required></textarea>
+            <button id="bio" name="bio" type="submit">Submit</button>
+        </section>
         <br>
-    </select>
-    <button id="dropdown" name="dropdown" type="submit">Submit</button>
-</form>
+        <section>
+            <h3>How did you hear about us?</h3>
+
+            <input id="billboard" name="billboard" type="checkbox" value="Bill"><label for="billboard">Billboard</label>
+            <input id="radioad" name="radioad" type="checkbox" value="Radio Ad"><label for="radioad">Radio
+            Advertisement</label>
+            <input id="internet" name="internet" type="checkbox" value="Internet"><label for="internet">Internet</label>
+            <input id="other" name="other" type="checkbox" value="Other"><label for="other">Other</label>
+            <br>
+            <button type="submit">Submit your Answer</button>
+            <br>
+        </section>
+        <section>
+        <label for="browser"><h3>What Internet Browser are you Using?</h3></label>
+        <select name="browser" id="browser">
+            <option value="Chrome">Google Chrome</option>
+            <option value="Firefox">Mozilla Firefox</option>
+            <option value="Internet Explorer">Internet Explorer</option>
+            <option value="Opera">Opera</option>
+            <option value="Safari">Safari</option>
+            <br>
+        </select>
+        <button id="browser" name="browser" type="submit">Submit</button>
+        </section>
+    </form>
+</main>
 </body>
 </html>
