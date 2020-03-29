@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Property Search Extra Exercise</title>
 </head>
 <body>
-$END$
+<header>
+    <h1>Property Search: Find your Perfect Property with us!</h1>
+    <h3>Enter your desired specifications below:</h3>
+    <br>
+</header>
+<main>
+    <section>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <label for="property type">Property type:</label>
+            <select name="property type" id="property type" placeholder="Select style home:">
+                <option value="starter">Starter Home</option>
+                <option value="small">Small Home</option>
+                <option value="medium">Medium Sized Home</option>
+                <option value="Large">Mansion Like, Large Home</option>
+            </select>
+            <label for="squarefoot">Square Footage:</label>
+            <select name="squarefoot" id="squarefoot">
+                <option value="small">800 Square Feet</option>
+                <option value="medium">1500 Square Feet</option>
+                <option value="large">2500 Square Feet</option>
+                <option value="xl">3000+ Square Feet</option>
+            </select>
+            <br>
+            <label for="min-price">Minimum price:</label>
+            <select name="min-price" id="min-price" type="number" pattern="$">
+                <option value="low">$25,000-$50,000</option>
+                <option value="medium">$50,000-$85,000</option>
+                <option value="medium high">$85,000-$125,000</option>
+                <option value="large">$125,000-$150,000</option>
+                <option value="extra large">$150,000-$175,000</option>
+            </select>
+            <label for="max-price">Maximum price:</label>
+            <select name="max-price" id="max-price">
+                <option value="low">$50,000</option>
+                <option value="medium">$85,000</option>
+                <option value="medium high">$140,000</option>
+                <option value="large">$185,000</option>
+                <option value="extra large">+$300,000</option>
+            </select>
+            <br>
+            <label for="zipcode">Zipcode:</label>
+            <input id="zipcode" type="text" name="zipcode" pattern="(\d{5}([\-]\d{4})?)" required>
+            <br>
+            <label for="bedrooms">Number of Bedrooms:</label>
+            <select name="bedrooms" id="bedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+            </select>
+            <label for="bathrooms">Number of Bathrooms:</label>
+            <select name="bathrooms" id="bathrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+            </select>
+            <br>
+            <button type="submit">Search Now</button>
+    </section>
+    </form>
+</main>
+
 </body>
 </html>
