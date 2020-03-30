@@ -15,10 +15,10 @@
     }
 */
 
-.comic {
-font-family: "Comic Sans MS";
-    color: red;
-}
+/*.comic {*/
+/*font-family: "Comic Sans MS";*/
+/*    color: red;*/
+/*}*/
 
 
 /*
@@ -42,6 +42,10 @@ font-family: "Comic Sans MS";
 /*font-family: "Comic Sans MS";*/
 /*}*/
 
+/*html {*/
+/*    background: green;*/
+/*}*/
+
 
 
 
@@ -57,7 +61,7 @@ font-family: "Comic Sans MS";
 
 /*p, h1 {*/
 /*font-family: "Comic Sans MS";*/
-/*color: red;*/
+/*color: blue;*/
 /*}*/
 
 
@@ -120,10 +124,10 @@ font-family: "Comic Sans MS";
     }
 */
 
-/*p.comic {*/
-/*font-family: "Comic Sans MS";*/
-/*color: red;*/
-/*}*/
+p.comic {
+font-family: "Comic Sans MS";
+color: red;
+}
 
 
 /*
@@ -132,29 +136,33 @@ font-family: "Comic Sans MS";
     }
 */
 
-/*h3#comic {background: blue}*/
+h3#comic {background: blue}
 
 
 
 
 /* -----------  PSEUDO CLASSES */
 
-/*a:link {*/
-/*font-size: 10px;*/
-/*}*/
+h1:hover {
+    color: red;
+}
 
-/*a:visited {*/
-/*font-size: 20px;*/
-/*}*/
+a:link {
+font-size: 16px;
+}
 
-/*a:hover {*/
-/*font-size: 30px;*/
-/*}*/
+a:visited {
+font-size: 20px;
+}
 
-/*a:active {*/
-/*font-size: 40px;*/
-/*color: black;*/
-/*}*/
+a:hover {
+font-size: 30px;
+}
+
+a:active {
+font-size: 40px;
+color: black;
+}
 
 
 
@@ -163,12 +171,13 @@ font-family: "Comic Sans MS";
 /* color ===================================================== */
 
 body {
+
     /*background: lime;*/
     /*background: #00ff00;*/
     /*background: #000;*/
     /*background: rgb(0, 255, 0);*/
     /*opacity: .2;*/
-    /*background: rgba(0, 255, 0, 1);*/
+    background: rgba(0, 255, 0, .3);
 }
 
 

@@ -1,11 +1,71 @@
 .fancy-header {
     color: purple;
+    text-align: center;
+    text-decoration: underline;
 }
+
+header p {
+    color: green;
+}
+
+.bottom {
+    color: rebeccapurple;
+    font-size: 1.2em;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;;
+    background: aquamarine;
+    background: url("../img/radio-city.jpg");
+    background-size: cover;
+    opacity: .8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    font-size: 1.2em;
+}
+
 
 h2 {
     color: blue;
+    text-decoration: underline;
 }
 
-li {
+ul {
     color: green;
+    list-style: square;
+}
+
+ol {
+    list-style: upper-roman;
+    color: green;
+}
+
+
+table, th, td, tr {
+    border: .8em solid purple;
+    color: aquamarine;
+    padding: .2em;
+}
+
+a:link {
+    font-size: 1.4rem;
+    color: darkmagenta;
+}
+
+a:visited {
+    font-size: 1.5rem;
+    color: seagreen;
+}
+
+a:hover {
+    font-size: 1.8rem;
+}
+
+a:active {
+    font-size: 1rem;
+    color: black;
 }
