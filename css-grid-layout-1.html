@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css Grid Layout 1</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+            grid-template-rows: repeat(8,1fr);
+            height: 90vh;
+            grid-gap: .5em;
+            width: 90vw;
+
+
+
+        }
+
+        .yellow {
+            background: yellow;
+            padding: 15px;
+        }
+
+        body {
+            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            /*align-items: center;*/
+
+        }
+
+        header {grid-area: 1 / 1 / 2 / -1;}
+        nav {grid-area: 2 / 1 / 9 / 3;}
+        section {grid-area: 2 / 3 / 8 / 7;}
+        .ads {grid-area: 2 / 7 / 8 / 9;}
+        footer {grid-area: 8 / 3 / 9 / -1;}
+    </style>
+</head>
+<body>
+<main>
+    <div class="wrapper">
+
+    <header class="yellow">
+        Header
+    </header>
+
+    <nav class="yellow">
+        Nav
+    </nav>
+
+    <section class="ads yellow">
+        Ads
+    </section>
+
+    <section class="article yellow">
+        Article
+    </section>
+
+    <footer class="yellow">
+        Footer
+    </footer>
+
+    </div>
+</main>
+</body>
+</html>

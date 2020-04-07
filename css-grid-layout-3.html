@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid Layout 3</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: repeat(12,1fr);
+            height: 90vh;
+            grid-gap: .7em;
+            width: 90vw;
+
+        }
+
+        .yellow {
+            background:gold;
+            padding: 10px;
+
+        }
+
+        span {
+            font-size: 50px;
+            color: white;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .one{grid-area: 1 / 1 / 3 / 13}
+        .two{grid-area: 3 / 1 / 13 / 4}
+        .three{grid-area: 3 / 4 / 5 / 7}
+        .four{grid-area: 3 / 7 / 5 / 13}
+        .five{grid-area:5 / 4 / 7 / 10}
+        .six{grid-area: 5 / 10 / 7 / 13}
+        .seven{grid-area:7 / 4 / 9 / 7}
+        .eight{grid-area: 7 / 7 / 9 / 10}
+        .nine{grid-area:7 / 10 / 9 / 13 }
+        .ten{grid-area: 9 / 4 / 13 / 13}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+            <span class="yellow one">1</span>
+            <span class ="yellow two">2</span>
+            <span class="yellow three">3</span>
+            <span class="yellow four">4</span>
+            <span class="yellow five">5</span>
+            <span class="yellow six">6</span>
+            <span class="yellow seven">7</span>
+            <span class="yellow eight">8</span>
+            <span class="yellow nine">9</span>
+            <span class="yellow ten">10</span>
+
+    </div>
+</body>
+</html>
