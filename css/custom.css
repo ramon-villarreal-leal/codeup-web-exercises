@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+
+}
+
+}
+
+.jumbotron  {
+
+
+    /*background-image: url("img/pizza.png");*/
+    /*width: 100%;*/
+    /*background-image: cover;*/
+
+}
+
+
+h1 {
+    padding-left: 200px;
+
+    opacity: .8;
+}
+
+nav a:hover {
+    background: lightgray;
+}
+
+
+i {
+
+}
+
+

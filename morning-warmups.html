@@ -72,38 +72,52 @@
 
     // 04/6/2020 Write a JavaScript function that takes in an argument, and will return the boolean true if the
     // argument is an even number, and false for all other arguments.
+    //
+    // function isEvenNum(parameter) {
+    //     if(parameter % 2 === 0) {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    //     return parameter % 2 === 0;
+    // }
+    //
+    // console.log(isEvenNum(4), true);
+    // console.log(isEvenNum(77), false);
+    // console.log(isEvenNum("Derek"), false);
+    //
+    // // Write a function, returnEvenOddMessage, 04/7/2020
+    //     // that takes in a number input and returns the string "is even" if the number
+    //     // input is even and returns the string "is odd" if the number input is odd.
+    //     // HINT: Is there some code you have already written that can be used to solve the problem?
+    //
+    //     function returnEvenOddMessage(num) {
+    //     if(isEvenNum(num)) {
+    //         return "is even";
+    //     } else {
+    //         return "is odd";
+    //     }
+    // }
+    //
+    // console.log(returnEvenOddMessage(4), "is even");
+    // console.log(returnEvenOddMessage(77), "is odd");
+    // console.log(returnEvenOddMessage(0), "is even");
 
-    function isEvenNum(parameter) {
-        if(parameter % 2 === 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
-        return parameter % 2 === 0;
+//4/8/2020
+// Write a javascript function that returns true or
+// false as to whether or not a number passed into the function is a whole number. (edited)
+
+
+
+        function iswholeNumber(num) {
+
+        return num === Math.round(num);
     }
 
-    console.log(isEvenNum(4), true);
-    console.log(isEvenNum(77), false);
-    console.log(isEvenNum("Derek"), false);
-
-    // Write a function, returnEvenOddMessage, 04/7/2020
-        // that takes in a number input and returns the string "is even" if the number
-        // input is even and returns the string "is odd" if the number input is odd.
-        // HINT: Is there some code you have already written that can be used to solve the problem?
-
-        function returnEvenOddMessage(num) {
-        if(isEvenNum(num)) {
-            return "is even";
-        } else {
-            return "is odd";
-        }
-    }
-
-    console.log(returnEvenOddMessage(4), "is even");
-    console.log(returnEvenOddMessage(77), "is odd");
-    console.log(returnEvenOddMessage(0), "is even");
-
+    console.log(iswholeNumber(88));
+    console.log(iswholeNumber(3.14));
+    console.log(iswholeNumber("Derek"));
 
 
 
