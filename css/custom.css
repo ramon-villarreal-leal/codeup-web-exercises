@@ -1,33 +1,8 @@
-* {
-    box-sizing: border-box;
-
+header {
+    background-image: url("../img/pizza.png");
 }
 
+header h1 {
+    opacity: .7;
+    font-weight: 4001;
 }
-
-.jumbotron  {
-
-
-    /*background-image: url("img/pizza.png");*/
-    /*width: 100%;*/
-    /*background-image: cover;*/
-
-}
-
-
-h1 {
-    padding-left: 200px;
-
-    opacity: .8;
-}
-
-nav a:hover {
-    background: lightgray;
-}
-
-
-i {
-
-}
-
-
