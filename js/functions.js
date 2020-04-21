@@ -1,3 +1,6 @@
+// (function ()) {
+//
+// }();
 "use strict";
 
 /**
@@ -9,7 +12,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
     function sayHello(name) {
-     return "Hello " + name + "!";
+     return "Hello, " + name + "!";
 }
 
 console.log(sayHello("Mark"));
@@ -24,8 +27,8 @@ console.log(sayHello("Laura"));
  * console.log 'helloMessage' to check your work
  */
 
-var helloMessage = sayHello('Ramon');
-console.log(helloMessage);
+var helloMessage = sayHello("Ramon Villarreal-Leal");
+console.log(helloMessage, "Hello, Ramon Villarreal-Leal");
 
 /**
  * TODO:
@@ -63,9 +66,13 @@ function isTwo (num) {
     return 2 === num;
 }
 
-console.log(isTwo(random));
-console.log("Your random number is " + random);
 
+
+console.log(isTwo(random));
+console.log("Your random number is : " + random);
+console.log(isTwo(1), false);
+console.log(isTwo(2), true);
+console.log(isTwo(3), false);
 
 
 /**
@@ -80,13 +87,15 @@ console.log("Your random number is " + random);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip (tipPercent, totalCostofFood) {
-    return tipPercent * totalCostofFood;
+
+function calculateTip(tipPercent, totalCostOfFood) {
+    return tipPercent * totalCostOfFood;
 }
 
-console.log("Your recommended tip is " + calculateTip(.20, 20));
-console.log("Your recommended tip is " + calculateTip(.25, 25.50));
-console.log("Your recommended tip is " + calculateTip(.15, 33.42));
+console.log("Your recommended tip is $" + calculateTip(.20, 20).toFixed(2));
+console.log("Your recommended tip is $" + calculateTip(.25, 30).toFixed(2));
+console.log("Your recommended tip is $" + calculateTip(.30, 50).toFixed(2));
+
 
 
 
@@ -97,11 +106,36 @@ console.log("Your recommended tip is " + calculateTip(.15, 33.42));
  * then display the dollar amount they should tip
  */
 
-var totalFoodCost =  parseFloat(prompt("Total food cost: "));
-var tipPercent = parseFloat(prompt("Total tip: "));
+// var totalFoodCost = parseFloat(prompt("Your total food cost is $"));
+// var tipPercent = parseFloat(prompt("Your total tip is $"));
+//
+// alert("Your total food cost is $" + totalFoodCost + "and you would like to tip .15%, .18%, .20%, .25%?" + tipPercent + "."
+//  + "You
 
-alert("Your total bill is $" + totalFoodCost + " and your tip % is "
-    + tipPercent + "." + "Your calculated tip is: " + calculateTip(tipPercent,totalFoodCost));
+// my solution
+
+// alert("Welcome to the calculate tip app!");
+//
+// var totalFoodCost =  parseFloat(prompt("Total food cost: "));
+// var tipPercent = parseFloat(prompt("Total tip: "));
+//
+// alert("Your total bill is $" + totalFoodCost + " and your tip % is "
+//     + tipPercent + "." + "Your calculated tip is: " + calculateTip(tipPercent,totalFoodCost));
+
+
+alert("Welcome to the calculate tip app!");
+
+var bill = Number(prompt("What is your total bill?"));
+var tip = Number(prompt("How much would you like to tip? (enter 1-100 for the percent value)"));
+var tipPercentage = tip / 100;
+var tipDollars = calculateTip(tipPercentage, bill).toFixed(2);
+
+alert("You will need to tip $" + tipDollars);
+
+
+console.log(typeof bill);
+console.log(typeof tip);
+
 
 
 
@@ -121,14 +155,41 @@ alert("Your total bill is $" + totalFoodCost + " and your tip % is "
  */
 
 
-function applyDiscount (originalPrice, discountPercent) {
-    if(Number(discountPercent < 1 && Number(discountPercent > 0))) {
-        return originalPrice - (originalPrice * discountPercent);
-    } else {
-            return "You need to put a proper discount %.";
-    }
+// function applyDiscount (originalPrice, discountPercent) {
+//     if(Number(discountPercent < 1 && Number(discountPercent > 0))) {
+//         return originalPrice - (originalPrice * discountPercent);
+//     } else {
+//             return "You need to put a proper discount %.";
+//     }
+// }
+//
+// console.log(applyDiscount(100, .10));
+// console.log(applyDiscount(80, .20));
+
+// var originalPrice = 100;
+// var discountPercent = .2; // 20%
+// applyDiscount(originalPrice, discountPercent) // 80
+//
+// applyDiscount(45.99, 0.12) // 40.4712
+//
+//
+// function applyDiscount(price, discount) {
+//     return price - (price * discount);
+// }
+//
+// console.log(applyDiscount(45.99, 0.12), 40.4712);
+
+
+// written example below:
+
+var originalPrice = 100;
+var discountPercent = .2;
+applyDiscount(originalPrice, discountPercent);
+
+function applyDiscount(price, discount) {
+    return price - (price * discount);
 }
 
-console.log(applyDiscount(100, .10));
-console.log(applyDiscount(80, .20));
+console.log(applyDiscount(45.99, .12), 40.4712);
+
 
