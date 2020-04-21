@@ -11,26 +11,24 @@ alert("Great, " + userInputColor + " is my favorite color too!");
 // Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're going to like it).
 // If price for a movie per day is $3, how much will you have to pay?
 
-// var theLittleMermaidDays = 3;
-//
-// var brotherBearDays = 5;
-//
-// var  herculesDays = 1;
-//
-// var price = 3;
-//
-//
-// var theLittleMermaidDays = prompt("the Little Mermaid was rented for " + theLittleMermaidDays + " days");
-//
-// console.log(alert("It cost " + theLittleMermaidDays * price + " to rent"));
-//
-// var brotherBearDays = prompt("Brother Bear was rented for " + brotherBearDays + " days");
-//
-// console.log(alert("It cost " + brotherBearDays * price + " to rent"));
-//
-// var herculesDays =  prompt("Hercules was rented for " + herculesDays + " days");
-//
-// console.log(alert("It cost " + herculesDays * price + " to rent"));
+var rentalPerDayDollars = Number(prompt("What is the the daily rental rate in dollars?"));
+var littleMermaidDays = Number(prompt("How many days will The Little Mermaid be rented?"));
+var brotherBearDays = Number(prompt("How many days will Brother Bear be rented?"));
+var herculesDays = Number(prompt("How many days will Hercules be rented?"));
+
+var totalRentalCost = (littleMermaidDays + brotherBearDays + herculesDays) * rentalPerDayDollars;
+
+alert("The total will be $" + totalRentalCost.toFixed(2));
+
+
+
+
+
+
+
+
+
+
 
 
 // Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, ' +
@@ -54,12 +52,37 @@ console.log(alert("Google total pay: " + googleWeeklyTotal));
 
 var amazonWeeklyTotal = amazonPay * amazonHours;
 
-console.log(alert("Amazon total pay: " + amazonWeeklyTotal));
+alert("Amazon total pay: " + amazonWeeklyTotal);
 
 var facebookWeeklyTotal = facebookPay * facebookHours;
 
-console.log(alert("Facebook total pay: " + facebookWeeklyTotal));
+alert("Facebook total pay: " + facebookWeeklyTotal);
 
-var weeklyTotalPay = parseInt(googleWeeklyTotal) +parseInt(amazonWeeklyTotal) + parseInt(facebookWeeklyTotal);
+var weeklyTotalPay = parseInt(googleWeeklyTotal) + parseInt(amazonWeeklyTotal) + parseInt(facebookWeeklyTotal);
 
-console.log(alert("Weekly total pay: " + weeklyTotalPay));
+alert("Weekly total pay: " + weeklyTotalPay);
+
+
+// A student can be enrolled in a class only if the class is not
+// full and the class schedule does not conflict with her current schedule.
+
+var classIsNotFull = confirm("Confirm that class is not full"); // boolean
+var classSchedulesCheck = confirm("Confirm that the schedules check."); // boolean
+var studentEnrolled = classIsNotFull && classSchedulesCheck;
+alert("Student enrollment Status: " + studentEnrolled);
+
+
+
+
+// A product offer can be applied only if a person buys more than 2 items,
+//     and the offer has not expired. Premium members do not need to buy a specific amount of products.
+
+var discountBreakPoint = 2;
+var numberOfItems = Number(prompt("How many items were bought?"));
+var offerIsNotExpired = confirm("Confirm offer is not expired.");
+var isPremiumMember = confirm("Customer is a premium member");
+
+var productDiscountApplied = offerIsNotExpired && (isPremiumMember || numberOfItems >= discountBreakPoint);
+
+alert("Product discount applied: " + productDiscountApplied);
+

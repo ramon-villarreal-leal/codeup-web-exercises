@@ -92,3 +92,4 @@ var passValid = hasMinLength && hasNoUserName && hasMaxLength && isTrim;
 
 
 
+
