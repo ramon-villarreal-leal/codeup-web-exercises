@@ -16,7 +16,6 @@
 }
 
 console.log(sayHello("Mark"));
-
 console.log(sayHello("Laura"));
 
 /**
@@ -112,7 +111,7 @@ console.log("Your recommended tip is $" + calculateTip(.30, 50).toFixed(2));
 // alert("Your total food cost is $" + totalFoodCost + "and you would like to tip .15%, .18%, .20%, .25%?" + tipPercent + "."
 //  + "You
 
-// my solution
+// my solution HERE
 
 // alert("Welcome to the calculate tip app!");
 //
@@ -154,6 +153,7 @@ console.log(typeof tip);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
+// original code
 
 // function applyDiscount (originalPrice, discountPercent) {
 //     if(Number(discountPercent < 1 && Number(discountPercent > 0))) {

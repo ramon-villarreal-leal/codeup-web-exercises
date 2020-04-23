@@ -87,8 +87,8 @@ function analyzeColorSwitch(color) {
  * function to show it to the user.
  */
 
-var colors = prompt("What is your favorite color?");
-alert(analyzeColorSwitch(colors));
+var userColors = prompt("What is your favorite color?");
+alert(analyzeColorSwitch(userColors));
 
 /* ########################################################################## */
 
@@ -124,7 +124,7 @@ function calculateTotal(luckyNum, totalAmount) {
     } else if (luckyNum === 3) {
         (discount = .35);
     } else if (luckyNum === 4) {
-        (discount = .40);
+        (discount = .50);
     } else {
 
     }
@@ -138,8 +138,6 @@ console.log("This is for number 4: $" + calculateTotal(4, 60));
 console.log("This is for number 5: $" + calculateTotal(5, 60));
 
 
-
-
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -148,7 +146,21 @@ console.log("This is for number 5: $" + calculateTotal(5, 60));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
+
 var luckyNumber = Math.floor(Math.random() * 6);
+
+var bill = Number(prompt("What is your final bill?"));
+alert("Your lucky number was " + luckyNumber);
+if (luckyNumber < 5 ) {
+    alert("Your total bill was $" + bill.toFixed(2) + " before discount.");
+
+    var discount = bill - (luckyNumber * bill);
+
+    alert("Your new discounted bill is $" + calculateTotal(luckyNumber, bill).toFixed(2));
+
+} else {
+    alert("Your non-discounted rate is $" + calculateTotal(luckyNumber, bill));
+}
 
 /**
  * TODO:
@@ -166,3 +178,77 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+function evenOrOdd(num) {
+    return (num % 2 === 0) ? num + " is an even number" : num + " is an odd number";
+}
+
+function plusOneHundo(num) {
+    return num + 100;
+}
+
+function positiveOrNegative(num) {
+    if (num > 0) {
+        return num + " is a positive number";
+    } else {
+        return num + " is a negative number";
+    }
+}
+
+function numberGame() {
+    if (confirm("Would you care to play a game with me?")) {
+        var userNum = parseFloat(prompt("Gimme a number."));
+        if (!isNaN(userNum)) {
+            alert(evenOrOdd(userNum));
+            alert(userNum + " plus 100 is equal to: " + plusOneHundo(userNum));
+            alert(positiveOrNegative(userNum));
+        } else {
+            alert("You're no fun...");
+        }
+    } else {
+        alert("You're no fun...");
+    }
+}
+
+numberGame();
+
+// mine on bottom
+// function isANumber() {
+//     var pickANumber = confirm("Would you like to enter a number?");
+//     var enterNumber = prompt("Enter a number ");
+//     var isItANumber = !isNaN(enterNumber);
+//     if (isItANumber) {
+//         alert("Your number is " + enterNumber);
+//         var addNumber100 = parseFloat(enterNumber);
+//         parseInt(alert("your number +100 is " + enterNumber + 100));
+//
+//         if(enterNumber % 2 == 0) {
+//             alert("Number is even");
+//     }
+//     alert("Your number is " + enterNumber);
+//
+//     } else {
+//         alert("Number is Odd");
+//     }
+//
+// }
+// isANumber();
+
+
+
+// function isANumber() {
+//     // var pickANumber = confirm("would you like to enter a number?");
+//     // if (pickANumber = false); {
+//     //     alert("You need to pick a number:")
+//     // }
+//     alert("Your number is " + pickANumber);
+//     var pickANumber = confirm("Would you like to enter a number?");
+//     alert("Your number is " + pickANumber);
+//     var enterNumber = prompt("Enter a Number.");
+//     Number(alert("Your number is " + enterNumber));
+//     if (enterNumber % 2 == 0) {
+//         alert("Even Number");
+//     } else {
+//         alert("Odd Number");
+//     }
+// }
