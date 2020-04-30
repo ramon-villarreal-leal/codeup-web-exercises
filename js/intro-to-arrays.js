@@ -227,3 +227,17 @@ var pies = ["apple", "cherry", "key lime", "huckleberry"];
     favoriteFoods.forEach(function(food) {
         console.log(food);
     });
+
+    // how to pull certain values from an array into a new one student question.
+
+    var originalArray = [1,2, 'dog', 'cat', 3, 'mouse', 4];
+    var numberArray = [];
+
+    function seperateValues(arr) {
+        var numberArray = [];
+
+        arr.forEach(function() {
+        if(typeof(element) === 'number');
+        })
+    }
+
