@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Problems Tutoring</title>
+</head>
+<body>
+<script>
+    // Write a function that returns the upper case version of any string input.
+    function isString(str) {
+        return str.toUpperCase();
+    }
+
+    console.log(isString("8"), "8");
+    console.log(isString("cat"), "CAT")
+    console.log(isString("DOG"), "DOG")
+
+    //Write a function that returns true if the input is null and false otherwise.
+     function isNull(input) {
+        return input === null;
+     }
+
+    console.log(isNull(""), false);
+    console.log(isNull(NaN), false);
+    console.log(isNull(null), true);
+
+    // Write a function, returnTheLargerNum, that takes in two number arguments and returns the highest number.
+    // function returnTheLargerNum(num1, num2) {
+    //     return Math.max(num1, num2);
+    // }
+    //rewrite without Math.max
+    function returnTheLargerNum(num1, num2) {
+        if(num1 > num2) {
+            return num1;
+        } else if(num2 > num1) {
+            return num2;
+        }
+    }
+    // Try and account for if numbers are equal to one another. Same numbers equal to each other.
+
+    console.log(returnTheLargerNum(24, 30), 30); //expected 30
+    console.log(returnTheLargerNum(44, 41), 44);
+    console.log(returnTheLargerNum(77, 81), 81);
+
+    // Write a function that takes in two arguments: a string and a letter. If the first argument contains the second argument, return true and false otherwise.
+
+
+
+    // write a function that returns a numeric value of 55
+    function number55() {
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

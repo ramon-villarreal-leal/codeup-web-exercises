@@ -27,6 +27,6 @@
 //        console.log("YAY all cones are sold!");
 //    }
 //
-// }while(allCones > 0);
+// } while(allCones > 0);
 
 

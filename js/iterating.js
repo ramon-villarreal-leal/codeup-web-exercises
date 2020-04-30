@@ -60,8 +60,25 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    function returnOne() {
 
+    //returns 1st
+    function first(arr) {
+        return arr[0];
     }
+    console.log(first(names));
+
+    // returns 2nd
+    function second(arr) {
+        return arr[1];
+    }
+    console.log(second(names));
+
+    //returns last one
+    function last(arr) {
+        return arr[arr.length - 1];
+    }
+    console.log(last(names));
+
+    //array[i] to find specific element in the array!
 
 })();
