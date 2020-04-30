@@ -1,4 +1,5 @@
-"use strict";
+// "use strict";
+
 
 
 
@@ -7,6 +8,7 @@
 //     for(var i = 1; i <= 10; i++) {
 //         console.log(num + " x " + i + " = " + (num * i));
 //     }
+//     return num;
 // }
 // console.log(showMultiplicationTable(6));
 
@@ -20,6 +22,33 @@
 // 24 is even
 // 199 is odd
 
+// Justins answwer
+//     function generateRandomNumber(min,max) {
+//         return Math.floor(Math.random() * (max - min + 1)) + min;
+//     }
+//
+//     function isEven(num) {
+//         return num % 2 === 0;
+//     }
+//
+//     function returnEvenOddMessage(isEven,num) {
+//         return isEven(num) ? num + " is even" : num + " is odd";
+//     }
+//
+//     function displayRandomNumbers(generateRandomNumber, isEven, returnEvenOddMessage, numberOfRandoms, min, max) {
+//         var output = "";
+//         var random;
+//         for(var i = 1; i <= numberOfRandoms; i += 1) {
+//             random = generateRandomNumber(min, max);
+//             output += returnEvenOddMessage(isEven, random);
+//             output += "\n";
+//
+//         }
+//         return output;
+// }
+//     console.log(displayRandomNumbers(generateRandomNumber, isEven, returnEvenOddMessage, 10, 20, 200));
+
+    // my answer
     // for (var i = 1; i <= 10; i++) {
     //     var randomNumber = Math.floor(Math.random() * 180) + 20;
     //     if(randomNumber % 2 === 0) {
@@ -59,6 +88,8 @@
 //     console.log(retVal);
 // }
 
+
+
 // # 4 answer
 // for (var i = 1; i <= 9; i += 1) { //i++ same for end of for
 //     var retVal = "";
@@ -75,4 +106,8 @@
 //         console.log(i);
 //     }
 // }
+
+
+
+
 
