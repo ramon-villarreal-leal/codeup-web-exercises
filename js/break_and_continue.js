@@ -48,23 +48,23 @@
 // }
 
 
-// do {
-//     var randomNumber = parseFloat(prompt("Enter an odd number between 1-50."))
-//     if (randomNumber % 2 !== 0 && randomNumber < 50 && randomNumber > 0) {
-//         console.log("Number to skip is: " + randomNumber);
-//         break;
-//     } else {
-//         alert("Ya dun goofed enter an odd number!");
-//     }
-// } while (true)
-//
-// for (var i = 1; i < 50; i++) {
-//     if (i % 2 === 0) {
-//         continue;
-//     }
-//     if (i === randomNumber) {
-//         console.log("Yikes! Skipping number " + randomNumber);
-//         continue;
-//     }
-//     console.log("Your odd number is " + i);
-// }
+do {
+    var randomNumber = parseFloat(prompt("Enter an odd number between 1-50."))
+    if (randomNumber % 2 !== 0 && randomNumber < 50 && randomNumber > 0) {
+        console.log("Number to skip is: " + randomNumber);
+        break;
+    } else {
+        alert("Ya dun goofed enter an odd number!");
+    }
+} while (true)
+
+for (var i = 1; i < 50; i++) {
+    if (i % 2 === 0) {
+        continue;
+    }
+    if (i === randomNumber) {
+        console.log("Yikes! Skipping number " + randomNumber);
+        continue;
+    }
+    console.log("Your odd number is " + i);
+}

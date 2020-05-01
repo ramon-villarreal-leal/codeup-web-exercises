@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+"use strict";
+
+function sum(a,b) {
+    return a + b;
+}
+
+console.log(sum(1, 2));
+console.log(sum(1, 3));
+console.log(sum(1, 2));
+
+
+function returnName() {
+    return "Justin";
+}
+ // function returnGreeting() {
+ //    return "Hello " + returnName();
+ // }
+
+function returnGreeting(callback) {
+    return "Hello " + callback();
+}
+
+ console.log(returnGreeting(returnName));
+
+var someArray = [1,2,3];
+function logEachElement(element) {
+
+}
+someArray.forEach(function() {
+
+});
+
+
+</script>
+</body>
+</html>

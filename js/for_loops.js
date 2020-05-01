@@ -4,13 +4,13 @@
 
 
 // #1Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
-// function showMultiplicationTable (num) {
-//     for(var i = 1; i <= 10; i++) {
-//         console.log(num + " x " + i + " = " + (num * i));
-//     }
-//     return num;
-// }
-// console.log(showMultiplicationTable(6));
+function showMultiplicationTable (num) {
+    for(var i = 1; i <= 10; i++) {
+        console.log(num + " x " + i + " = " + (num * i));
+    }
+    return num;
+}
+console.log(showMultiplicationTable(6));
 
 
 
@@ -49,14 +49,14 @@
 //     console.log(displayRandomNumbers(generateRandomNumber, isEven, returnEvenOddMessage, 10, 20, 200));
 
     // my answer
-    // for (var i = 1; i <= 10; i++) {
-    //     var randomNumber = Math.floor(Math.random() * 180) + 20;
-    //     if(randomNumber % 2 === 0) {
-    //         console.log(randomNumber + " number is even");
-    //     } else {
-    //         console.log(randomNumber + " number is odd");
-    //     }
-    // }
+    for (var i = 1; i <= 10; i++) {
+        var randomNumber = Math.floor(Math.random() * 180) + 20;
+        if(randomNumber % 2 === 0) {
+            console.log(randomNumber + " number is even");
+        } else {
+            console.log(randomNumber + " number is odd");
+        }
+    }
 
 
 
@@ -91,21 +91,21 @@
 
 
 // # 4 answer
-// for (var i = 1; i <= 9; i += 1) { //i++ same for end of for
-//     var retVal = "";
-//     for (var j = 1; j <= i; j +=1) { // j++ same for end of for
-//         retVal += i;
-//     }
-//     console.log(retVal);
-// }
+for (var i = 1; i <= 9; i += 1) { //i++ same for end of for
+    var retVal = "";
+    for (var j = 1; j <= i; j +=1) { // j++ same for end of for
+        retVal += i;
+    }
+    console.log(retVal);
+}
 
 //5 answer
 
-// for (var i = 100; i > 0; i--) {
-//     if (i % 5 === 0) {
-//         console.log(i);
-//     }
-// }
+for (var i = 100; i > 0; i--) {
+    if (i % 5 === 0) {
+        console.log(i);
+    }
+}
 
 
 
