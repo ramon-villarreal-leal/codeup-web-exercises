@@ -57,24 +57,46 @@
 
 
 
-    function noDiscount(zeroDiscount) {
-        return zeroDiscount;
-    }
-
     function discount(totalAmount, discount) {
-         return totalAmount * discount;
-    }
-
-    function beforeDiscount(total) {
-        return total;
+         return parseFloat(totalAmount) * parseFloat(discount);
     }
 
 
-    for(var i = 0; i < shoppers.length; i++) {
-        if(shoppers[i].name && shoppers[i].amount < 200) {
-            console.log(shoppers[i].name + "" + shoppers[i].amount + " and gets no discount.");
-        }
-    }
+
+    // for(var i = 0; i < shoppers.length; i++) {
+    //     if(shoppers[i].name && shoppers[i].amount < 200) {
+    //         console.log(shoppers[i].name + " is not eligible for a discount.")
+    //         console.log(shoppers[i].name + "'s total is " + shoppers[i].amount.toFixed(2) + " and gets no discount.");
+    //     }
+    //     else if(shoppers[i].name && shoppers[i].amount >= 200) {
+    //         console.log(shoppers[i].name + " is eligible for a discount! Woo!")
+    //         console.log("Before discount the total for " + shoppers[i].name + "'s is" + " $" + shoppers[i].amount.toFixed(2));
+    //         console.log("After discount the new total for " + shoppers[i].name + " $" + discount(shoppers[i].amount, .88).toFixed(2));
+    //     }
+    // }
+
+    shoppers.forEach(function shoppingPeople(shoppingPeople){
+        console.log("Thank you for shopping at HEB! Your totals are below!");
+        // for(var i = 0; i < shoppers.length; i++) { // no point to have a for loop in a for each.
+            if (shoppingPeople.name && shoppingPeople.amount < 200) {
+                console.log(shoppingPeople.name + " is not eligible for a discount." + "\n"
+                    + shoppingPeople.name + "'s total is $" + shoppingPeople.amount.toFixed(2) + " and gets no discount.");
+                // console.log(shoppers[i].name + "'s total is " + shoppers[i].amount.toFixed(2) + " and gets no discount.");
+            } else if (shoppingPeople.name && shoppingPeople.amount >= 200) {
+                console.log(shoppingPeople.name + " is eligible for a discount! Woo!" + "\n"
+                    + "Before discount the total for " + shoppingPeople.name + "'s is" + " $" + shoppingPeople.amount.toFixed(2) + "\n"
+                + "After discount the new total for " + shoppingPeople.name + " $" + discount(shoppingPeople.amount, .88).toFixed(2));
+                // console.log("Before discount the total for " + shoppers[i].name + "'s is" + " $" + shoppers[i].amount.toFixed(2));
+                // console.log("After discount the new total for " + shoppers[i].name + " $" + discount(shoppers[i].amount, .88).toFixed(2));
+            }
+
+    });
+
+
+
+
+
+
 
 
 
@@ -203,5 +225,9 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+
+
 
 })();
