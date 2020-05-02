@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -11,11 +11,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    var person = {
-        first_Name: "Ramon",
-        last_Name: "Villarreal-Leal",
 
-    }
+    // var person = {
+    //     first_Name: "Ramon",
+    //     last_Name: "Villarreal-Leal",
+    //
+    // }
 
 
     /**
@@ -27,11 +28,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    var sayHello = function () {
-        return "Hello from " + person.first_Name + " " + person.last_Name + "!";
-    }
-
-    console.log(sayHello());
+    // var sayHello = function () {
+    //     return "Hello from " + person.first_Name + " " + person.last_Name + "!";
+    // }
+    //
+    // console.log(sayHello());
 
 
     /** TODO:
@@ -48,11 +49,39 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+
+
+    function noDiscount(zeroDiscount) {
+        return zeroDiscount;
+    }
+
+    function discount(totalAmount, discount) {
+         return totalAmount * discount;
+    }
+
+    function beforeDiscount(total) {
+        return total;
+    }
+
+
+    for(var i = 0; i < shoppers.length; i++) {
+        if(shoppers[i].name && shoppers[i].amount < 200) {
+            console.log(shoppers[i].name + "" + shoppers[i].amount + " and gets no discount.");
+        }
+    }
+
+
+
+
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -67,7 +96,66 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: "Man's Search for Meaning",
+            author: {
+                firstName: "Victor",
+                lastName: "Frankl"
+            }
+        },
+        {
+            title: "Meditations",
+            author: {
+                firstName: "Marcus",
+                lastName: "Aurelius"
+            }
+        },
+        {
+            title: "Leviathan",
+            author: {
+                firstName: "Thomas",
+                lastName: "Hobbes"
+            }
+        },
+        {
+            title: "A Treatise on Human Nature",
+            author: {
+                firstName: "David",
+                lastName: "Hume"
+            }
 
+        },
+        {
+            title: "A Book of Five Rings",
+            author: {
+                firstName: "Miyamoto",
+                lastName: "Musashi"
+            }
+        }
+
+
+    ]
+
+    // console.log(books[0].title)
+    // console.log(books[0].author.firstName)
+    // console.log(books[0].author.lastName)
+    //
+    // console.log(books[1].title)
+    // console.log(books[1].author.firstName)
+    // console.log(books[1].author.lastName)
+    //
+    // console.log(books[2].title)
+    // console.log(books[2].author.firstName)
+    // console.log(books[2].author.lastName)
+    //
+    // console.log(books[3].title)
+    // console.log(books[3].author.firstName)
+    // console.log(books[3].author.lastName)
+    //
+    // console.log(books[4].title)
+    // console.log(books[4].author.firstName)
+    // console.log(books[4].author.lastName)
 
     /**
      * TODO:
@@ -93,6 +181,17 @@
      *      ---
      *      ...
      */
+
+
+    // for (var i = 0; i < books.length; i++) {
+    //
+    //         console.log("Book # " + [i + 1] + "\n" + "Title: " + books[i].title + "\n" + "Author: " +
+    //             books[i].author.firstName + " " +
+    //             books[i].author.lastName + "\n" + "---");
+    //
+    // }
+
+
 
     /**
      * Bonus:
