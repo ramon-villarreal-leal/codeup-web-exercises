@@ -14,9 +14,12 @@
 
     var person = {
         first_Name: "Ramon",
-        last_Name: "Villarreal-Leal",
+        last_Name: "Villarreal-Leal"
 
     }
+
+    console.log(person.first_Name);
+    console.log(person.last_Name);
 
 
     /**
