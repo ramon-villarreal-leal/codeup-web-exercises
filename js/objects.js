@@ -12,11 +12,11 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    // var person = {
-    //     first_Name: "Ramon",
-    //     last_Name: "Villarreal-Leal",
-    //
-    // }
+    var person = {
+        first_Name: "Ramon",
+        last_Name: "Villarreal-Leal",
+
+    }
 
 
     /**
@@ -28,11 +28,12 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    // var sayHello = function () {
-    //     return "Hello from " + person.first_Name + " " + person.last_Name + "!";
-    // }
-    //
-    // console.log(sayHello());
+
+    var sayHello = function () {
+        return "Hello from " + person.first_Name + " " + person.last_Name + "!";
+    }
+
+    console.log(sayHello());
 
 
     /** TODO:
@@ -56,13 +57,14 @@
     ];
 
 
-
     function discount(totalAmount, discount) {
-         return parseFloat(totalAmount) * parseFloat(discount);
+        return parseFloat(totalAmount) * parseFloat(discount);
     }
 
+    // For Loop
 
-
+    // console.log("For Loop made by accident!")
+    //
     // for(var i = 0; i < shoppers.length; i++) {
     //     if(shoppers[i].name && shoppers[i].amount < 200) {
     //         console.log(shoppers[i].name + " is not eligible for a discount.")
@@ -74,6 +76,8 @@
     //         console.log("After discount the new total for " + shoppers[i].name + " $" + discount(shoppers[i].amount, .88).toFixed(2));
     //     }
     // }
+
+    // For Each Loop.
 
     shoppers.forEach(function shoppingPeople(shoppingPeople){
         console.log("Thank you for shopping at HEB! Your totals are below!");
@@ -92,17 +96,27 @@
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
+     //Failed attempt at using var output = "";
+    // function discountGroceries(totalAmount, discount) {
+    //     return parseFloat(totalAmount) * parseFloat(discount);
+    //     var output = "";
+    //
+    //
+    //
+    //     shoppers.forEach(function element(element) {
+    //         if (element.name && element.amount < 200) {
+    //             output += element.name + " is not eligible for a discount." + "\n"
+    //                 + element.name + "'s total is $" + element.amount.toFixed(2) + " and gets no discount.";
+    //         } else if(element.name && element.amount >= 200) {
+    //             output += element.name + " is eligible for a discount! Woo!" + "\n"
+    //                 + "Before discount the total for " + element.name + "'s is" + " $" + element.amount.toFixed(2) + "\n"
+    //                 + "After discount the new total for " + element.name + " $" + discountGroceries(element.amount, .88).toFixed(2);
+    //         }
+    //     });
+    //     return output;
+    // }
+    //
+    // console.log(discountGroceries(discount));
 
 
     /** TODO:
@@ -159,25 +173,25 @@
 
     ]
 
-    // console.log(books[0].title)
-    // console.log(books[0].author.firstName)
-    // console.log(books[0].author.lastName)
-    //
-    // console.log(books[1].title)
-    // console.log(books[1].author.firstName)
-    // console.log(books[1].author.lastName)
-    //
-    // console.log(books[2].title)
-    // console.log(books[2].author.firstName)
-    // console.log(books[2].author.lastName)
-    //
-    // console.log(books[3].title)
-    // console.log(books[3].author.firstName)
-    // console.log(books[3].author.lastName)
-    //
-    // console.log(books[4].title)
-    // console.log(books[4].author.firstName)
-    // console.log(books[4].author.lastName)
+    console.log(books[0].title)
+    console.log(books[0].author.firstName)
+    console.log(books[0].author.lastName)
+
+    console.log(books[1].title)
+    console.log(books[1].author.firstName)
+    console.log(books[1].author.lastName)
+
+    console.log(books[2].title)
+    console.log(books[2].author.firstName)
+    console.log(books[2].author.lastName)
+
+    console.log(books[3].title)
+    console.log(books[3].author.firstName)
+    console.log(books[3].author.lastName)
+
+    console.log(books[4].title)
+    console.log(books[4].author.firstName)
+    console.log(books[4].author.lastName)
 
     /**
      * TODO:
@@ -205,14 +219,13 @@
      */
 
 
-    // for (var i = 0; i < books.length; i++) {
-    //
-    //         console.log("Book # " + [i + 1] + "\n" + "Title: " + books[i].title + "\n" + "Author: " +
-    //             books[i].author.firstName + " " +
-    //             books[i].author.lastName + "\n" + "---");
-    //
-    // }
+    for (var i = 0; i < books.length; i++) {
 
+        console.log("Book # " + [i + 1] + "\n" + "Title: " + books[i].title + "\n" + "Author: " +
+            books[i].author.firstName + " " +
+            books[i].author.lastName + "\n" + "---");
+
+    }
 
 
     /**
@@ -226,8 +239,18 @@
      *   `showBookInfo` function.
      */
 
-
-
+    //Attempt made at bonus
+    // function createBook(title, author) {
+    //     return title + author;
+    //     var output = "";
+    //     for (var i = 0; i < books.length; i++) {
+    //
+    //         output += "Book # " + [i + 1] + "\n" + "Title: " + books[i].title + "\n" + "Author: " +
+    //             books[i].author.firstName + " " +
+    //             books[i].author.lastName + "\n" + "---";
+    //
+    //     }
+    // }
 
 
 })();
