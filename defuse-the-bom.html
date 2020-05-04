@@ -27,11 +27,18 @@
         detonationTimer--;
     }
 
+    var intervalID = setInterval(updateTimer, 1000);
+    alert("Push the button to save us all!!")
+
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
 
+        clearInterval(intervalID);
+        alert("Congrats you saved humanity!");
+
     }
+    console.log(updateTimer(detonationTimer));
 
     // Don't modify anything below this line!
     //
