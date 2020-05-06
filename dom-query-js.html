@@ -35,13 +35,12 @@
 
         //REDONE EXERCISES USING EVENT LISTENERS.
         // button 1 for JavaScript is cool
-        var listener = function(event) {
+        var listener = function() {
             mainHeader.innerHTML = "JavaScript is Cool!"
             mainHeader.style.color = "purple";
         }
-
-        var btn1 = document.getElementById("btn1");
-        btn1.addEventListener('click', listener);
+        // Appropriate way of doing it!
+        document.querySelector("#btn1").addEventListener('click', listener);
 
         //button 2 for Hello World!
         var secondButton = function() {
