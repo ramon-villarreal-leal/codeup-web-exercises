@@ -37,7 +37,7 @@ console.log(numStrings);
 /* ***************************************************************
 * 						REMOVING ELEMENTS
 *************************************************************** */
-//These methods return the lement you are removing
+//These methods return the element you are removing
 //modifies original arrays
 
 var activeCohorts = ['deimos','europa','fortuna','ganymede','ada','bayes'];
