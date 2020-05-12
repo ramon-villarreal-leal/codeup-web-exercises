@@ -31,14 +31,14 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
 // this for loop starts at 0
 
 
-// for(var i = 0; i < colors.length; i++) {
-//     console.log(colors[i]);
-//}
+for(var i = 0; i < colors.length; i++) {
+    console.log(colors[i]);
+}
 // this for loop starts at the last element
 // for(var i = (colors.length - 1); i >= 0; i--) {
 //     console.log(colors[i]);
 // }
-//
+
 // // this forEach Loop iterates over all array elements
 // colors.forEach(function(color, index, array){
 //     console.log()
