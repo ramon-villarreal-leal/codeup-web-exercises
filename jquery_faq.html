@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Parks</title>
+
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .red {
+
+        }
+    </style>
+</head>
+<body>
+<h1>National Park questions!</h1>
+
+<p>FAQ about National Parks</p>
+
+<dl>
+    <dt>1:</dt>
+    <dd class="invisible">How long can we hike for?</dd>
+
+    <dt>2:</dt>
+    <dd class="invisible">What wildlife lingers in the area?</dd>
+
+    <dt>3:</dt>
+    <dd class="invisible">If you are lost what do you do?</dd>
+
+    <dt>4:</dt>
+    <dd class="invisible">If you see a bear what do you?</dd>
+
+    <dt>5:</dt>
+    <dd class="invisible">How long can you camp out for?</dd>
+
+    <dt>6:</dt>
+    <dd class="invisible">Where can you enter the river</dd>
+
+    <dt>7:</dt>
+    <dd class="invisible">Do I show ID to Park Ranger</dd>
+
+    <dt>8:</dt>
+    <dd class="invisible">Can I bring my gun to hunt?</dd>
+
+    <dt>9:</dt>
+    <dd class="invisible">Will I be able to sleep here for an extended time?</dd>
+
+    <dt>10:</dt>
+    <dd class="invisible sasquatch">OMG A SASQUATCH!!! DONT CLICK ME</dd>
+</dl>
+
+<button>Click me for FAQ</button>
+
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+</ul>
+<h3>Bolded Up man</h3>
+<ul id="state-parks-world">
+
+    <li>Yosimite</li>
+    <li>Big Bear</li>
+    <li>Grand Canyon</li>
+    <li>Ragland Road</li>
+</ul>
+
+<button class="national-button">Click for cool stuff</button>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function() {
+
+    $('button').click(function(){
+        $('dd').toggleClass('invisible');
+    // if($(dd).hasClass(invisible)) {
+    //
+    // }
+    })
+
+        $('dt').click(function(){
+            $(this).toggleClass('red');
+            if($('dd').css('background-color', 'red')) {
+                $('body').css('background-color', 'purple')
+            } else {
+                $('dd').removeClass('red');
+            }
+        });
+
+        $('.sasquatch').click(function(){
+            $(this).after('<img src="img/sasquatch.gif">');
+        });
+
+        $('.national-button').click(function(){
+            $('ul').each(function(){
+            $(this).children().last().css('background-color', 'yellow');
+            });
+        });
+
+        $('h3').click(function(){
+            console.log($(this).next().children().css('font-weight','bold'));
+            //     $('ul').each(function(){
+        //         $(this).children().next().css('font-weight','bold');
+        //     })
+        });
+
+        $('li').click(function(){
+            console.log($(this).parent().children().first().css('color', 'blue'));
+        });
+
+
+
+
+
+
+
+
+
+
+
+    });
+</script>
+
+</body>
+</html>
