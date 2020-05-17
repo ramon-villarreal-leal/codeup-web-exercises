@@ -1,10 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>LifeTalk Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/551f0669d3.js" crossorigin="anonymous"></script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+         nav {
+             white-space: none;
+         }
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: whitesmoke;
+            /*background: linear-gradient(to right, #0062E6, #33AEFF);*/
+        }
+
+        .darkBack {
+            background: black;
+        }
+
+        #sticky-footer {
+            flex-shrink: none;
+        }
+
+        .jumbo-image {
+            background-image: url(img/person-on-bridge.jpg);
+            background-size: cover;
+            height: 600px;
+        }
+
+        .white {
+            background-color: whitesmoke;
+            opacity: .8;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            background-color: #111111;
+            color: white;
+
+        }
+
+
+
+
+        .typewriter {
+            color: #fff;
+            /*font-family: ;*/
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid whitesmoke; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            /*letter-spacing: .05em; !* Adjust as needed *!*/
+            animation:
+                    typing 3.5s steps(30, end),
+                    blink-caret .5s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: whitesmoke }
+        }
+
+
+    </style>
 </head>
 <body>
 
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">LifeTalkBlog</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home Sweet Home!</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="jumbotron jumbotron-fluid  jumbo-image d-flex justify-content center">
+    <div class="container row d-flex">
+        <div class=" justify-content-center">
+            <h1 class="inline typewriter"><span class="white">Breath In and Out</span></h1>
+            <p class="inline"><span class="white">Your life can change in an instant!</span></p><i
+            class="fas fa-smile-beam"></i></p>
+            <div class=" d-flex justify-content center">
+                <h2>Ride the Waters of Positivity</h2>
+            </div>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+
+<div class="container">
+    <h1>Welcome to our LifeTalk Blog! <i class="fas fa-star"></i></h1>
+    <p class="animate">A place to post your feelies.</p>
+</div>
+
+<!--Blog post should refresh here!-->
+<div class="container">
+    <div id="blog-post">Content Loads Here</div>
+</div>
+<div class="container m-3">
+    <button id="refresh" class="btn btn-lg btn-block mb-3">Refresh!</button><br>
+</div>
+
+<!--Footer-->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="jumbotron text-center bg-dark darkBack m-3" style="margin-bottom:0">
+        <h4>Copyright &copy; LifeTalk</h4>
+    </div>
+</footer>
+</body>
+
+
+<!--BootStrap and Jquery Code-->
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<!--Start of Ajax and Jquery-->
+<script>
+    (function () {
+        "use strict";
+        // Get your blog.json files and log it
+        $.ajax('data/blog.json').done(function (info) {
+            console.log(info);
+        })
+
+        function refresh() {
+            $.get('data/blog.json').done(function(resp){
+                $.each(resp, function(index, blog){
+                    var add = "<div>";
+                    add += "<h3>" + blog.title + "</h3>";
+                    add += "<p>" + blog.content + "</p>";
+                    add += "<em>" + "Categories: " + blog.categories + "</em>";
+                    add += "<p>" + blog.date + "</p>";
+                    add += "</div>";
+                    $('#blog-post').append(add);
+
+                })
+            })
+        }
+
+        $('#refresh').click(function(){
+
+            $('#blog-post').html("");
+            refresh();
+        });
+
+
+    })();
+
+</script>
 </body>
 </html>
