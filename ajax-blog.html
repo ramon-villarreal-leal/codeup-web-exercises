@@ -13,6 +13,10 @@
         * {
             box-sizing: border-box;
         }
+
+       .navbar {
+           margin-bottom: 0px;
+        }
          nav {
              white-space: none;
          }
@@ -24,6 +28,10 @@
         body {
             background: whitesmoke;
             /*background: linear-gradient(to right, #0062E6, #33AEFF);*/
+        }
+
+        .posi {
+            color: white;
         }
 
         .darkBack {
@@ -86,7 +94,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse close-top">
     <div class="container-fluid">
 
         <div class="navbar-header">
@@ -108,7 +116,7 @@
             <p class="inline"><span class="white">Your life can change in an instant!</span></p><i
             class="fas fa-smile-beam"></i></p>
             <div class=" d-flex justify-content center">
-                <h2>Ride the Waters of Positivity</h2>
+                <h2 class="posi">Ride the Waters of Positivity</h2>
             </div>
         </div>
 
@@ -173,7 +181,7 @@
                     $('#blog-post').append(add);
 
                 })
-            })
+            }) //add fail here for later console.log failed status.
         }
 
         $('#refresh').click(function(){
