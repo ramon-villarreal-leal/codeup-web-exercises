@@ -154,47 +154,77 @@
 
         // practice
         //toggles invisible class
-        $('.hide').click(function () {
-            $('dd').toggleClass('invisible');
-        })
+        // $('.hide').click(function () {
+        //     $('dd').toggleClass('invisible');
+        // })
+        //
+        // // dt element clicked highlights them
+        //
+        // $('dt').click(function () {
+        //     $(this).after().css('color', 'red');
+        // });
+        //
+        // $('.national-button').click(function () {
+        //     $('ul').each(function (index, li) {
+        //         $(li).children().last().css('background-color', 'yellow');
+        //     });
+        // });
+        //
+        // //Practice for using each method
+        // $('li').each(function (index) {
+        //     if (index % 2 === 0) {
+        //         $(this).css('background-color', 'purple');
+        //     } else {
+        //         $(this).css('background-color', 'green');
+        //     }
+        // })
+        //
+        // //click on h3 add font weight bold to it!
+        //
+        // $('h3').click(function () {
+        //     $(this).next().children().css('font-weight', 'bold');
+        // });
+        //
+        // $('li').click(function () {
+        //     $(this).parent().children().first().css('color', 'blue');
+        // });
+        //
+        // //bonus problem: prevent default not neccesary.
+        //
+        // $('#1-btn').click(function(e){
+        //     e.preventDefault();
+        //     $('.gridsys').
+        // });
 
-        // dt element clicked highlights them
+
+        //practice part 2
+
+        $('.hide').click(function(){
+            $('dd').toggleClass('invisible');
+        });
 
         $('dt').click(function () {
-            $(this).after().css('color', 'red');
+            $(this).after().css('color','red');
         });
 
-        $('.national-button').click(function () {
-            $('ul').each(function (index, li) {
+        $('.national-button').click(function(){
+            $('ul').each(function(index, li) {
                 $(li).children().last().css('background-color', 'yellow');
-            });
+                console.log(index + ": " + $(this).text());
+            })
+
         });
 
-        //Practice for using each method
-        $('li').each(function (index) {
-            if (index % 2 === 0) {
-                $(this).css('background-color', 'purple');
-            } else {
-                $(this).css('background-color', 'green');
-            }
+        $('h3').click(function(){
+                $(this).next().after().css('font-weight', 'bold');
+
         })
 
-        //click on h3 add font weight bold to it!
-
-        $('h3').click(function () {
-            $(this).next().children().css('font-weight', 'bold');
-        });
-
-        $('li').click(function () {
+        $('li').click(function(){
             $(this).parent().children().first().css('color', 'blue');
-        });
+        })
 
-        //bonus problem: prevent default not neccesary.
 
-        $('#1-btn').click(function(e){
-            e.preventDefault();
-            $('.gridsys').
-        });
 
 
 
