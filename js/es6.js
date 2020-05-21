@@ -129,13 +129,17 @@ let list = '<ul>';
 
 
 // TODO: rewrite the following loop to use a for..of loop
-developers.forEach(function (developer) {
+// developers.forEach(function (developer) {
     for(let developer of developers) {
   // TODO: rewrite the assignment below to use template strings
-  list += `<li>${developers}</li>`;
-});
+  list += `<li>${developer}</li>`;
+}
+
 list += '</ul>';
 
 let holdThis = document.getElementsByTagName("body")[0].innerHTML
 
 // add code later on
+
+document.getElementsByTagName("body")[0].innerHTML = holdThis + list;
+
