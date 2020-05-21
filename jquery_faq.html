@@ -170,7 +170,7 @@
         //     });
         // });
         //
-        // //Practice for using each method
+        //Practice for using each method
         // $('li').each(function (index) {
         //     if (index % 2 === 0) {
         //         $(this).css('background-color', 'purple');
@@ -199,30 +199,64 @@
 
         //practice part 2
 
-        $('.hide').click(function(){
-            $('dd').toggleClass('invisible');
-        });
+        // $('.hide').click(function(){
+        //     $('dd').toggleClass('invisible');
+        // });
+        //
+        // $('dt').click(function () {
+        //     $(this).after().css('color','red');
+        // });
+        //
+        // $('.national-button').click(function(){
+        //     $('ul').each(function(index, li) {
+        //         $(li).children().last().css('background-color', 'yellow');
+        //         console.log(index + ": " + $(this).text());
+        //     })
+        //
+        // });
+        //
+        // $('h3').click(function(){
+        //         $(this).next().after().css('font-weight', 'bold');
+        //
+        // })
+        //
+        // $('li').click(function(){
+        //     $(this).parent().children().first().css('color', 'blue');
+        // })
 
-        $('dt').click(function () {
-            $(this).after().css('color','red');
-        });
+        $('dt').click(function(){
+            $(this).next().after().css('background-color', 'red');
+        })
 
         $('.national-button').click(function(){
             $('ul').each(function(index, li) {
-                $(li).children().last().css('background-color', 'yellow');
-                console.log(index + ": " + $(this).text());
-            })
-
+                $(this).children().last().css('background-color', 'yellow');
+            });
         });
 
         $('h3').click(function(){
-                $(this).next().after().css('font-weight', 'bold');
-
-        })
+            $(this).next().children().after().css('font-weight', 'bold');
+        });
 
         $('li').click(function(){
-            $(this).parent().children().first().css('color', 'blue');
-        })
+            $(this).parent().children().next().first().after().css('color', 'blue');
+        });
+
+
+
+
+        $('ul').each(function(index){
+            if(index % 2 === 0) {
+                $(this).after().children().first().next().css('background-color', 'red');
+            } else {
+                $(this).after().children().first().css('background-color', 'blue');
+            }
+        });
+
+
+
+
+
 
 
 
