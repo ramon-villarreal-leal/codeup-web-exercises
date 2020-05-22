@@ -1,3 +1,5 @@
 const MAPBOX_KEY = 'pk.eyJ1IjoicmFtb24tdmlsbGFycmVhbC1sZWFsIiwiYSI6ImNrOXVsNXBpcTAyeHozaW1wN25nYXpnenYifQ.iOYkI427KmuDmWUN3iTKhQ';
 
 const OPEN_WEATHER_APPID ='5a5d01bcca0ecdeff0c6dc22684d9842';
+
+const GITHUB_API_KEY = "05374c610b3d85615d849f3b3f7824e6a8f12f42";
