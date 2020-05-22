@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Parks</title>
+
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .red {
+
+        }
+
+        .flexbox {
+            display: flex;
+            justify-content: center;
+        }
+
+        .gridsys {
+
+            justify-content: center;
+
+        }
+
+        img {
+
+            display: grid;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1>National Park questions!</h1>
+
+<p>FAQ about National Parks</p>
+
+<dl>
+    <dt>1:</dt>
+    <dd>How long can we hike for?</dd>
+
+    <dt>2:</dt>
+    <dd class="">What wildlife lingers in the area?</dd>
+
+    <dt>3:</dt>
+    <dd class="">If you are lost what do you do?</dd>
+
+    <dt>4:</dt>
+    <dd class="">If you see a bear what do you?</dd>
+
+    <dt>5:</dt>
+    <dd class="">How long can you camp out for?</dd>
+
+    <dt>6:</dt>
+    <dd class="">Where can you enter the river</dd>
+
+    <dt>7:</dt>
+    <dd class="">Do I show ID to Park Ranger</dd>
+
+    <dt>8:</dt>
+    <dd class="">Can I bring my gun to hunt?</dd>
+
+    <dt>9:</dt>
+    <dd class="">Will I be able to sleep here for an extended time?</dd>
+
+    <dt>10:</dt>
+    <dd class=" sasquatch">OMG A SASQUATCH!!! DONT CLICK ME</dd>
+</dl>
+
+<button class="hide">Click me for FAQ</button>
+
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+</ul>
+<h3>Worldy State Parks</h3>
+<ul id="state-parks-world">
+
+    <li>Yosimite</li>
+    <li>Big Bear</li>
+    <li>Grand Canyon</li>
+    <li>Ragland Road</li>
+</ul>
+
+<button class="national-button">Click for cool stuff</button>
+<div class="flexbox">
+    <div id="first" class="gridsys"><img src="img/profile.png" alt="">
+        <button id="1-btn">1st</button>
+    </div>
+    <div id="second" class="gridsys"><img src="img/48x48.svg" alt="">
+        <button id="2-btn">2nd</button>
+    </div>
+    <div id="third" class="gridsys"><img src="img/30x30.svg" alt="">
+        <button id="3-btn">3rd</button>
+    </div>
+</div>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function () {
+
+        // $('button').click(function(){
+        //     $('dd').toggleClass('invisible');
+        // // if($(dd).hasClass(invisible)) {
+        // //
+        // // }
+        // })
+        //
+        //     $('dt').click(function(){
+        //         $(this).toggleClass('red');
+        //         if($('dd').css('background-color', 'red')) {
+        //             $('body').css('background-color', 'purple')
+        //         } else {
+        //             $('dd').removeClass('red');
+        //         }
+        //     });
+        //
+        //     $('.sasquatch').click(function(){
+        //         $(this).after('<img src="img/sasquatch.gif">');
+        //     });
+        //
+        //     $('.national-button').click(function(){
+        //         $('ul').each(function(){
+        //         $(this).children().last().css('background-color', 'yellow');
+        //         });
+        //     });
+        //
+        //     $('h3').click(function(){
+        //         // console.log($(this).next().children().css('font-weight','bold'));
+        //             $('ul').each(function(){
+        //             $(this).children().css('font-weight','bold');
+        //         })
+        //     });
+        //
+        //     //
+        //     $('li').click(function(){
+        //         console.log($(this).parent().children().first().css('color', 'blue'));
+        //     });
+
+        // practice
+        //toggles invisible class
+        // $('.hide').click(function () {
+        //     $('dd').toggleClass('invisible');
+        // })
+        //
+        // // dt element clicked highlights them
+        //
+        // $('dt').click(function () {
+        //     $(this).after().css('color', 'red');
+        // });
+        //
+        // $('.national-button').click(function () {
+        //     $('ul').each(function (index, li) {
+        //         $(li).children().last().css('background-color', 'yellow');
+        //     });
+        // });
+        //
+        //Practice for using each method
+        // $('li').each(function (index) {
+        //     if (index % 2 === 0) {
+        //         $(this).css('background-color', 'purple');
+        //     } else {
+        //         $(this).css('background-color', 'green');
+        //     }
+        // })
+        //
+        // //click on h3 add font weight bold to it!
+        //
+        // $('h3').click(function () {
+        //     $(this).next().children().css('font-weight', 'bold');
+        // });
+        //
+        // $('li').click(function () {
+        //     $(this).parent().children().first().css('color', 'blue');
+        // });
+        //
+        // //bonus problem: prevent default not neccesary.
+        //
+        // $('#1-btn').click(function(e){
+        //     e.preventDefault();
+        //     $('.gridsys').
+        // });
+
+
+        //practice part 2
+
+        // $('.hide').click(function(){
+        //     $('dd').toggleClass('invisible');
+        // });
+        //
+        // $('dt').click(function () {
+        //     $(this).after().css('color','red');
+        // });
+        //
+        // $('.national-button').click(function(){
+        //     $('ul').each(function(index, li) {
+        //         $(li).children().last().css('background-color', 'yellow');
+        //         console.log(index + ": " + $(this).text());
+        //     })
+        //
+        // });
+        //
+        // $('h3').click(function(){
+        //         $(this).next().after().css('font-weight', 'bold');
+        //
+        // })
+        //
+        // $('li').click(function(){
+        //     $(this).parent().children().first().css('color', 'blue');
+        // })
+
+        $('dt').click(function(){
+            $(this).next().after().css('background-color', 'red');
+        })
+
+        $('.national-button').click(function(){
+            $('ul').each(function(index, li) {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
+
+        $('h3').click(function(){
+            $(this).next().children().after().css('font-weight', 'bold');
+        });
+
+        $('li').click(function(){
+            $(this).parent().children().next().first().after().css('color', 'blue');
+        });
+
+
+
+
+        $('ul').each(function(index){
+            if(index % 2 === 0) {
+                $(this).after().children().first().next().css('background-color', 'red');
+            } else {
+                $(this).after().children().first().css('background-color', 'blue');
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        * {
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <h1 class="d-flex justify-content-center">My Tool Store</h1>
+    <hr>
+
+    <table class="table table-hover" id="products">
+        <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+    <button id="refresh" class="btn btn-dark">Refresh</button>
+
+    <!--<script src="https://code.jquery.com/jquery-2.2.4.min.js"-->
+    <!--        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <script>
+        (function () {
+            "use strict";
+            // TODO: Create an AJAX GET request for the file under data/inventory.json
+            // $.ajax("inventory.json").done(function(data){
+            //     console.log($('data.title').html(data));
+            //
+            // });
+
+            $.ajax("data/inventory.json").done(function (info) {
+                console.log(info);
+            });
+            // TODO: Take the data from inventory.json and append it to the products table
+            function refresh() {
+
+                $.get('data/inventory.json').done(function (resp) {
+                    $.each(resp, function (index, item) {
+                        var add = "<tr>";
+                        add += "<td>" + item.title + "</td>";
+                        add += "<td>" + item.quantity + "</td>";
+                        add += "<td>" + item.price + "</td>";
+                        add += "<td>" + item.categories + "</td>";
+                        add += "</tr>";
+                        $('#insertProducts').append(add);
+                        // console.log($('#products').append(resp.title));
+                    })
+                })
+            }
+
+
+            $('#refresh').click(function(){
+
+                $('#insertProducts').html("");
+                refresh();
+            });
+
+            //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+            //             its contents and fields
+            //       HINT: You will want to target #insertProducts for your new HTML elements
+        })();
+    </script>
+
+
+
+</body>
+</html>
+
+
+<!--$.get('data/inventory.json').done(function(resp) {-->
+<!--$.each(resp, function(index, item) {-->
+<!--var add = "<tr>";-->
+<!--    add += "<td>" + item.title + "</td>";-->
+<!--    add +=  "<td>" + item.quantity + "</td>";-->
+<!--    add +=  "<td>" + item.price + "</td>";-->
+<!--    add +=  "<td>" + item.categories + "</td>";-->
+<!--    add += "</tr>";-->
+<!--$('#insertProducts').append(add);-->
+<!--// console.log($('#products').append(resp.title));-->
+
+<!--})-->
+
+<!--})-->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+</head>
+<body>
+<!--JQuery-->
+<script src="js/jquery-2.2.4.js"></script>
+<!--Keys-->
+<script src="js/keys.js"></script>
+
+
+
+<script>
+    "use strict";
+
+    //send a request to open weather map ONECALL API
+    var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+    var weatherOptions = {
+        lat: 29.4241,
+        lon: -98.4936,
+        appid: OPEN_WEATHER_APPID,
+        exclude: 'minutely, current, hourly',
+        units: 'imperial'
+    };
+
+    $.get(weatherUrl, weatherOptions).done(function(data){
+        console.log(data)
+        console.log(data);
+        console.log(data.daily[0].temp.max)
+        console.log(data.daily[1].pressure)
+
+        var todayDate =
+        console.log(newDate(date.daily.dt * 1000));
+
+
+
+    });
+
+
+</script>
+</body>
+</html>

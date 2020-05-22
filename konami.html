@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Konami Code</title>
+
+    <style>
+
+        * {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        div {
+        height: 500px;
+        img: no-repeat;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<p class='code'>Up, Up, Down, Down, Left, Right, Left, Right, B, A</p>
+    <div id="contra"></div>
+<!--<iframe id="con"></iframe>-->
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft',
+        'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']
+    var konami = [];
+    var i = 0;
+
+    $(document).keyup(function(event) {
+
+
+            if(event.key === konamiCode[i]) {
+                konami.push(konamiCode[i])
+                i++;
+                console.log(event.key);
+                if(konami.length === konamiCode.length) {
+                    $('#contra').css('background-image', 'url(\'img/contra.png\')');
+                    $('#contra').html("<img src='img/contra.png' alt='contra game image'>");
+                    // $('#con').html("<iframe width=\"400\" height=\"300\"\n" +
+                    //     "    src=\"https://https://www.youtube.com/embed/O04bPRzqEEk?controls=0\">\n" +
+                    //     "</iframe>")
+                    $('body').css('background-color', 'purple');
+                    alert("congrats you got 30 lives!");
+
+                }
+            } else {
+                alert("pushed wrong code");
+                $('body').css('background-color', 'limegreen');
+                $('#contra').css('background-image', 'url(\'img/contra.png\')').remove();
+
+                konami = [];
+                    i = 0;
+
+            }
+
+
+    });
+
+</script>
+</body>
+</html>

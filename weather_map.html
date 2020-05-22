@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <style>
+
+        .adjust-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        .text-light {
+            color: white;
+        }
+
+        /*.marker {*/
+        /*    background-image: url('mapbox-icon.png');*/
+        /*    background-size: cover;*/
+        /*    width: 50px;*/
+        /*    height: 50px;*/
+        /*    border-radius: 50%;*/
+        /*    cursor: pointer;*/
+        /*}*/
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+    <span class="navbar-brand mb-0 h1" href="#">Weather App</span>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="text-light">Current City: <span id="city-name">San Antonio</span></li>
+    </ul>
+</nav>
+
+<!--Form for Search-->
+<form class="form-control form-inline md-form mr-auto mb-4">
+    <h3>Place: </h3>
+    <input id="search-city" class="form-control mr-sm-2" type="text" placeholder="City, State" aria-label="Search">
+    <button id="city-button" class="btn btn-rounded btn-sm my-0 btn-primary" type="submit">Find</button>
+</form>
+
+<!---->
+<div id="weather-update" class="adjust-card"></div>
+
+
+<div id="map"></div>
+
+<pre id="coordinates" class="coordinates"></pre>
+
+
+<!--BootStrap and JQuery Code-->
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+<!--Keys-->
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/mapbox-geocode-utils.js"></script>
+<script src="js/keys.js"></script>
+
+
+<!--Start of AJAX and JQuery-->
+<script>
+    "use strict";
+    $(document).ready(function () {
+        var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+        var weatherOptions = {
+            lat: 29.4241,
+            lon: -98.4936,
+            appid: OPEN_WEATHER_APPID,
+            exclude: 'minutely, current, hourly',
+            units: 'imperial'
+        };
+
+        //hoisting:
+        updateWeather();
+
+        //updates weather within this whole function
+
+        function updateWeather() {
+            $.get(weatherUrl, weatherOptions).done(function (data) {
+                // console.log(data);
+                // console.log(data.daily);
+                // console.log(data.daily[0]);
+                // console.log(data.daily[0].pressure);
+
+
+                data.daily.forEach(function getWeather(day, index) {
+                    // console.log(day);
+                    if (index <= 4) {
+                        // var iconcode = a.weather[0].icon;
+                        var grabDate = new Date(day.dt * 1000);
+                        var add = "<div class='card-body'>";
+                        add += "<div class='card-header'>" + "Date: " + (grabDate.getMonth() + 1) + "/" + grabDate.getDate() + "/" + grabDate.getFullYear() + "</div>"
+                        add += "<li class='list-group-item'>" + "High/Lows: " + day.temp.max + " &#8457;" + " / " + day.temp.min + " &#8457;" + "</li>"
+                        // add += "<li class='list-group-item'>" + "http://openweathermap.org/img/w/" + day.iconcode + ".png" + "</li>"
+                        add += "<li class='list-group-item'>" + "Description: " + day.weather[0].description + "</li>"
+                        add += "<li class='list-group-item'>" + "Humidity: " + day.humidity + "</li>"
+                        add += "<li class='list-group-item'>" + "Wind: " + day.wind_speed + "</li>"
+                        add += "<li class='list-group-item'>" + "Pressure: " + day.pressure + "</li>"
+                        // console.log()
+
+                        // console.log(day.description);
+
+                        add += "</div>"
+                        $('#weather-update').append(add);
+                    }
+
+                });
+
+
+            }); // end of Get request for putting weather on WebPage
+        };
+        // Find out how to get text from a form input from JQuery
+        // $('#city-button').click(function (event) {
+        //     // event.preventDefault();
+        //     var addCity = $('#search-city').val();
+        //     $('#city-name').text(addCity);
+        // });
+
+        console.log($('#search-city'));
+
+        // geocode (addCity, MAPBOX_KEY).then(function (results) {
+        //     console.log("Your Current City Coordinates: ")
+        //     console.log(results);
+
+        // Switch geoCode to #city-button place below here
+
+        $('#city-button').click(function (event) {
+            event.preventDefault();
+            //addgeo Code body in here
+
+            var addCity = $('#search-city').val();
+            $('#city-name').text(addCity);
+
+            geocode(addCity, MAPBOX_KEY).then(function (results) {
+
+                var lat = results[0];
+                    var lon = results[1];
+
+                weatherOptions.lat = lat;
+                weatherOptions.lon = lon;
+
+                // console.log(results);
+
+                $('#weather-update').html("");
+                updateWeather();
+                console.log(results);
+
+            });
+        });
+
+
+        // START OF MAPBOX MARKER
+        // console.log(MAPBOX_KEY);
+
+        mapboxgl.accessToken = MAPBOX_KEY;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 15,
+            // center: ([-98.4916, 29.4260]).], //longtide 1st then lattitude
+            center: [-98.4916, 29.4260] // order does not matter
+        });
+
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+        marker.setLngLat([-98.4936, 29.4241]);
+        marker.addTo(map);
+
+        //UPDATES COORDINATES
+        function onDragEnd() {
+
+            var lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML =
+                'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            weatherOptions.lat = lngLat.lat;
+            weatherOptions.lon = lngLat.lng;
+            $('#weather-update').html("");
+            updateWeather();
+        }
+
+        marker.on('dragend', onDragEnd);
+
+
+    });
+</script>
+</body>
+</html>

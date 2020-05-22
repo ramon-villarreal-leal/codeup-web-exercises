@@ -239,6 +239,35 @@
 
 
 
+    // function takesANumber(num) {
+    //     if(Math.pow(num, 4)) {
+    //         return Math.pow(num, 4);
+    //     } else if(isNaN(num)) {
+    //         return false;
+    //     }
+    // }
+    //
+    // console.log(takesANumber(3));
+    // console.log(takesANumber("meow"));
+    //
+    //
+    // // davids answer
+    // function raisedByPowerOfFour() {
+    //     if(!isNaN(num)) {
+    //         return num ** 4;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+
+
+    // 5/15/2020
+    /// Write a JavaScript function that takes in a
+    // string and returns the number of words in the string.
+    // If the function is ever passed an argument that is not a string,
+    // return the number 0.
+
 
         // Given the following array of objects, write a function in JavaScript that returns an array of objects where each hamster has a heightInMM greater than 85.
 
@@ -275,12 +304,47 @@
             fur: ['brown', 'white'],
             gender: "male",
             dateOfBirth: "January 14"
+
+    // function isString(str) {
+    //     var count = 0;
+    //     for(var i = 0; i < str.length; i++) {
+    //         if(count === str.length) {
+    //             return count;
+    //         } if(typeof !str === "string") {
+    //             return 0;
+    //         }
+    //     }
+    //     return str;
+    // }
+    //
+    // console.log(isString("meow re"), 4)
+    // console.log(isString("1"), 0)
+    // console.log(isString(1), 0)
+    // console.log(isString(667), 0)
+
+    //davids right answer
+
+    function numOfWords(str) {
+        if(typeof str === 'string') {
+            return str.split(" ").length;
+        } else {
+            return 0;
+
         }
     ];
 
         let hamsterHeight = hamsters.filter(hamster => hamster.heightInMM > 85);
 
         console.log(hamsterHeight);
+
+    console.log(numOfWords("this is 4 words."), 4);
+    console.log(numOfWords(99));
+    console.log(numOfWords("Cats are cool and so are you. I have " + 99 + "cats!"));
+
+
+
+
+
 
 
 
