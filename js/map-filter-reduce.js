@@ -44,6 +44,7 @@ console.log(users);
 let result = users.filter((user) => user.languages.length >= 3);
 console.log(result);
 //3
+
 let mapResult = users.map((user) => user.email)
 
 console.log(mapResult);
@@ -74,6 +75,13 @@ console.log(longestEmail);
 
 
 //6
-let instructorsString = users.reduce((user) => `${user.name.length}`, "");
+
+// 2nd parameter person variable that refers to the singular of the for Each s
+
+let instructorsString = users.reduce((userString, user) => {
+    return userString + `${user.name}, `;
+}, "Your instructors are: ");
+
+
 
 console.log(instructorsString);
