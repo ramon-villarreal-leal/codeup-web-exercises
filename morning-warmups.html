@@ -215,6 +215,29 @@
     //// Write a javascript function that takes in a number and returns the number
     // raised to the power of four. If any argument
     // is passed into the function that is not a number, return false.
+    //
+    // function takesANumber(num) {
+    //     if(Math.pow(num, 4)) {
+    //         return Math.pow(num, 4);
+    //     } else if(isNaN(num)) {
+    //         return false;
+    //     }
+    // }
+    //
+    // console.log(takesANumber(3));
+    // console.log(takesANumber("meow"));
+    //
+    //
+    // // davids answer
+    // function raisedByPowerOfFour() {
+    //     if(!isNaN(num)) {
+    //         return num ** 4;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+
 
     // function takesANumber(num) {
     //     if(Math.pow(num, 4)) {
@@ -238,11 +261,49 @@
     // }
 
 
+
     // 5/15/2020
     /// Write a JavaScript function that takes in a
     // string and returns the number of words in the string.
     // If the function is ever passed an argument that is not a string,
     // return the number 0.
+
+
+        // Given the following array of objects, write a function in JavaScript that returns an array of objects where each hamster has a heightInMM greater than 85.
+
+
+
+    var hamsters = [
+        {
+            name: "Hamtaro",
+            heightInMM: 86,
+            fur: ['orange', 'white'],
+            gender: "male",
+            dateOfBirth: "August 6"
+        } , {
+            name: "Bijou",
+            heightInMM: 75,
+            fur: ['white'],
+            gender: "female",
+            dateOfBirth: "July 10"
+        } , {
+            name: "Oxnard",
+            heightInMM: 100,
+            fur: ['grey', 'white'],
+            gender: "male",
+            dateOfBirth: "May 3"
+        } , {
+            name: "Boss",
+            heightInMM: 120,
+            fur: ['black', 'cream'],
+            gender: "male",
+            dateOfBirth: "Spetember 21"
+        } , {
+            name: "Snoozer",
+            heightInMM: 85,
+            fur: ['brown', 'white'],
+            gender: "male",
+            dateOfBirth: "January 14"
 
     // function isString(str) {
     //     var count = 0;
@@ -268,9 +329,13 @@
             return str.split(" ").length;
         } else {
             return 0;
-        }
-    }
 
+        }
+    ];
+
+        let hamsterHeight = hamsters.filter(hamster => hamster.heightInMM > 85);
+
+        console.log(hamsterHeight);
 
     console.log(numOfWords("this is 4 words."), 4);
     console.log(numOfWords(99));
