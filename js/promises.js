@@ -66,43 +66,43 @@ getLatestCommit('ramon-villarreal-leal');
 // });
 
 
-// function wait(seconds) {
-//     return new Promise(resolve=>{
-//         setTimeout(resolve, seconds);
-//     });
-// }
-//
-//
-//
-//
-// wait(1000).then(() => console.log("You'll see this after 1 second"));
-// wait(2000).then(() => console.log("You'll see this after 2 seconds"));
-// wait(3000).then(() => console.log("You'll see this after 3 seconds"));
-
-//
-//
-function versionTwoWait(seconds) {
-    seconds = seconds * 1000;
-    return new Promise(resolve => {
-        setTimeout(() => {
-            if(seconds > 1000) {
-                console.log("kind of hell yeah?" + seconds/1000)
-
-            } else if(seconds > 2000) {
-                console.log("oh hell yeah brother!" + seconds/1000 + "seconds")
-            } else if(seconds > 3000) {
-                console.log("OH YEAH BROTHER HELL YEAH OVERLOAD" + seconds/1000 + "maximum hell yeah reached!!!")
-            } else if (seconds > 5000) {
-                console.log("OH BROTHER IM DEAD");
-            }
-        },seconds)
+function wait(seconds) {
+    return new Promise(resolve=>{
+        setTimeout(resolve, seconds);
     });
 }
 
-versionTwoWait(1);
-versionTwoWait(2);
-versionTwoWait(3);
-versionTwoWait(5);
+
+
+
+wait(1000).then(() => console.log("You'll see this after 1 second"));
+wait(2000).then(() => console.log("You'll see this after 2 seconds"));
+wait(3000).then(() => console.log("You'll see this after 3 seconds"));
+
+//
+//
+// function versionTwoWait(seconds) {
+//     seconds = seconds * 1000;
+//     return new Promise(resolve => {
+//         setTimeout(() => {
+//             if(seconds > 1000) {
+//                 console.log("kind of hell yeah?" + seconds/1000)
+//
+//             } else if(seconds > 2000) {
+//                 console.log("oh hell yeah brother!" + seconds/1000 + "seconds")
+//             } else if(seconds > 3000) {
+//                 console.log("OH YEAH BROTHER HELL YEAH OVERLOAD" + seconds/1000 + "maximum hell yeah reached!!!")
+//             } else if (seconds > 5000) {
+//                 console.log("OH BROTHER IM DEAD");
+//             }
+//         },seconds)
+//     });
+// }
+//
+// versionTwoWait(1);
+// versionTwoWait(2);
+// versionTwoWait(3);
+// versionTwoWait(5);
 
 // githubApi.then(response => response.json())
 //     .then(jsonResponse => console.log(jsonResponse))
