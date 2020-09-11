@@ -107,27 +107,29 @@
         //updates weather within this whole function
 
         function updateWeather() {
-            $.get(weatherUrl, weatherOptions).done(function (data) {
-                // console.log(data);
-                // console.log(data.daily);
-                // console.log(data.daily[0]);
-                // console.log(data.daily[0].pressure);
 
+            $.get(weatherUrl, weatherOptions).done(function (data) {
 
                 data.daily.forEach(function getWeather(day, index) {
-                    // console.log(day);
+                    console.log(data);
                     if (index <= 4) {
                         // var iconcode = a.weather[0].icon;
                         var grabDate = new Date(day.dt * 1000);
                         var add = "<div class='card-body'>";
-                        add += "<div class='card-header'>" + "Date: " + (grabDate.getMonth() + 1) + "/" + grabDate.getDate() + "/" + grabDate.getFullYear() + "</div>"
+                        add += "<div class='card-header text-center font-weight-bold'>" + "Date: " + (grabDate.getMonth() + 1) + "/" + grabDate.getDate() + "/" + grabDate.getFullYear() + "</div>"
+                        add += "<li class='list-group-item text-center'> <img src=\"" + "http://openweathermap.org/img/wn/" + day.weather[0].icon + "@2x.png\" /></li>"
                         add += "<li class='list-group-item'>" + "High/Lows: " + day.temp.max + " &#8457;" + " / " + day.temp.min + " &#8457;" + "</li>"
-                        // add += "<li class='list-group-item'>" + "http://openweathermap.org/img/w/" + day.iconcode + ".png" + "</li>"
                         add += "<li class='list-group-item'>" + "Description: " + day.weather[0].description + "</li>"
                         add += "<li class='list-group-item'>" + "Humidity: " + day.humidity + "</li>"
                         add += "<li class='list-group-item'>" + "Wind: " + day.wind_speed + "</li>"
                         add += "<li class='list-group-item'>" + "Pressure: " + day.pressure + "</li>"
+
+                        var sunDate = new Date(day.sunrise * 1000)
+                        console.log(sunDate);
+                        // let time = new Date(sunDate.getFullYear(),sunDate.getMonth(),sunDate.getYear())
+                        add += "<li class='list-group-item'>" + "Sunrise: " + sunDate.getHours() + ":" + addZero(sunDate.getMinutes()) + "am</li>"
                         // console.log()
+                        console.log(day)
 
                         // console.log(day.description);
 
@@ -140,6 +142,12 @@
 
             }); // end of Get request for putting weather on WebPage
         };
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
         // Find out how to get text from a form input from JQuery
         // $('#city-button').click(function (event) {
         //     // event.preventDefault();
@@ -164,11 +172,19 @@
 
             geocode(addCity, MAPBOX_KEY).then(function (results) {
 
-                var lat = results[0];
-                    var lon = results[1];
+                var lat = results[1];
+                    var lon = results[0];
 
                 weatherOptions.lat = lat;
                 weatherOptions.lon = lon;
+
+                map.flyTo({
+                    center: [
+                        lon,
+                        lat
+                    ],
+                    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                });
 
                 // console.log(results);
 
@@ -187,7 +203,7 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 15,
+            zoom: 12,
             // center: ([-98.4916, 29.4260]).], //longtide 1st then lattitude
             center: [-98.4916, 29.4260] // order does not matter
         });
@@ -209,6 +225,16 @@
             weatherOptions.lon = lngLat.lng;
             $('#weather-update').html("");
             updateWeather();
+
+        //======FLY TO FUNCTIONALITY========//
+            map.flyTo({
+                center: [
+                lngLat.lng,
+                lngLat.lat
+        ],
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+
         }
 
         marker.on('dragend', onDragEnd);
